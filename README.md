@@ -8,7 +8,7 @@ bus_ticket_service
 
 ```bash
 # Navigate to project directory
-cd /Users/swivel/BMAD/bus_ticketer
+cd .../bus_ticketer
 
 # Start Tomcat container
 docker-compose -f docker-compose-tomcat.yml up -d
@@ -45,13 +45,13 @@ chmod +x bin/*.sh
 # Set CATALINA_HOME
 export CATALINA_HOME=/path/to/apache-tomcat-10.1.0
 export PATH=$CATALINA_HOME/bin:$PATH
-export JAVA_HOME=$(/usr/libexec/java_home -v 16)
+export JAVA_HOME=$(/usr/libexec/java_home -v 21)
 ```
 
 **Step 3: Build & Deploy WAR**
 ```bash
 # Build server
-cd /Users/swivel/BMAD/bus_ticketer/bus-ticketer-service/server
+cd .../bus_ticketer/bus-ticketer-service/server
 mvn clean package -DskipTests
 
 # Copy WAR to Tomcat
@@ -86,7 +86,7 @@ Create `$CATALINA_HOME/bin/setenv.sh`:
 export CATALINA_OPTS="-Xms256m -Xmx512m -XX:+UseStringDeduplication"
 
 # Java version
-export JAVA_HOME=$(/usr/libexec/java_home -v 16)
+export JAVA_HOME=$(/usr/libexec/java_home -v 21)
 
 # UTF-8 encoding
 export JAVA_TOOL_OPTIONS="-Dfile.encoding=UTF-8"
