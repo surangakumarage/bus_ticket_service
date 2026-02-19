@@ -105,3 +105,12 @@ export JAVA_TOOL_OPTIONS="-Dfile.encoding=UTF-8"
 # Debugging (optional)
 # export CATALINA_OPTS="$CATALINA_OPTS -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5005"
 ```
+Available Endpoints:
+
+GET http://localhost:9091/bus-ticketer-service/health - Health check
+GET http://localhost:9091/bus-ticketer-service/info - Service information
+GET/POST http://localhost:9091/bus-ticketer-service/api/v1/reservation/availability - Check seat availability
+POST http://localhost:9091/bus-ticketer-service/api/api/v1/reservation/book_ - Book a ticket
+
+
+
