@@ -1,20 +1,27 @@
 # bus_ticket_service
-bus_ticket_service
 
+bus_ticket_service
 
 ### Running Backend Server
 
 #### Option 1: Docker (Recommended for Production)
 
-```bash
+````bash
 # Navigate to project directory
-cd .../bus_ticketer
+cd .../bus_ticket_service
+
+set 
+export JAVA_HOME=$(/usr/libexec/java_home -v 21)
+
+# Build War
+cd .../bus-ticket-service
+mvn clean package -DskipTests
 
 # Start Tomcat container
-docker-compose -f docker-compose-tomcat.yml up -d
+docker-compose -f docker-compose.yml up -d
 
 # Verify server is running
-curl http://localhost:9091/bus-ticketer/health
+curl http://localhost:9091/bus-ticket-service/health
 
 # View logs
 docker-compose -f docker-compose-tomcat.yml logs -f
@@ -38,9 +45,10 @@ cd apache-tomcat-10.1.0
 
 # Set permissions
 chmod +x bin/*.sh
-```
+````
 
 **Step 2: Set Environment Variables**
+
 ```bash
 # Set CATALINA_HOME
 export CATALINA_HOME=/path/to/apache-tomcat-10.1.0
@@ -49,9 +57,10 @@ export JAVA_HOME=$(/usr/libexec/java_home -v 21)
 ```
 
 **Step 3: Build & Deploy WAR**
+
 ```bash
 # Build server
-cd .../bus_ticketer/bus-ticketer-service/server
+cd .../bus_ticketer/bus-ticketer-service
 mvn clean package -DskipTests
 
 # Copy WAR to Tomcat
@@ -65,6 +74,7 @@ tail -f $CATALINA_HOME/logs/catalina.out
 ```
 
 **Step 4: Verify Server**
+
 ```bash
 # Test health endpoint
 curl http://localhost:8080/bus-ticketer/health
@@ -76,9 +86,10 @@ curl "http://localhost:8080/bus-ticketer/api/v1/reservation/availability?origin=
 $CATALINA_HOME/bin/shutdown.sh
 ```
 
-#### Tomcat Configuration (`catalina.properties` or `setenv.sh`)
+#### Tomcat Configuration (`catalina.properties` or `setenv.sh` or setenv.bat)
 
 Create `$CATALINA_HOME/bin/setenv.sh`:
+
 ```bash
 #!/bin/bash
 

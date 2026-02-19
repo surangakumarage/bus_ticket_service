@@ -19,7 +19,7 @@ import java.util.Map;
  * Endpoints:
  * - GET/POST /api/v1/reservation/availability
  */
-@WebServlet(urlPatterns = {"/api/v1/reservation/availability"})
+@WebServlet(urlPatterns = {"bus-ticket-service/api/v1/reservation/availability"})
 public class AvailabilityServlet extends HttpServlet {
 
     private AvailabilityService availabilityService;

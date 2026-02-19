@@ -11,7 +11,7 @@ WORKDIR /usr/local/tomcat
 RUN rm -rf /usr/local/tomcat/webapps/ROOT
 
 # Copy the built WAR file to webapps as ROOT
-COPY server/target/bus-ticketer-service-1.0.0.war /usr/local/tomcat/webapps/ROOT.war
+COPY target/bus_ticket_service-1.0.0.war /usr/local/tomcat/webapps/ROOT.war
 
 # Update Tomcat server.xml to listen on port 9091
 RUN sed -i 's/port="8080"/port="9091"/g' /usr/local/tomcat/conf/server.xml

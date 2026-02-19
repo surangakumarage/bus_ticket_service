@@ -1,4 +1,4 @@
-version: '3.9'
+
 
 # Bus Ticketing System
 # Pure in-memory storage - No external database required
@@ -17,13 +17,14 @@ services:
     environment:
       APP_PROFILE: production
       SERVER_PORT: 9091
+      CONTEXT_PATH: /bus-ticket-service
       JAVA_OPTS: "-Xms256m -Xmx512m -XX:+UseStringDeduplication"
     volumes:
       - ./logs:/var/log/bus-ticketer
     networks:
       - bus-ticketer-network
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:9091/health"]
+      test: ["CMD", "curl", "-f", "http://localhost:9091/bus-ticket-service/health"]
       interval: 30s
       timeout: 10s
       retries: 3

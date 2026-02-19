@@ -10,7 +10,8 @@ public class ServerConfiguration {
     public static final int SHUTDOWN_TIMEOUT = 0;
 
     // API Configuration
-    public static final String API_BASE_PATH = "/api";
+    public static final String CONTEXT_PATH = "/bus-ticket-service";
+    public static final String API_BASE_PATH = CONTEXT_PATH + "/api";
     public static final String FARES_PATH = API_BASE_PATH + "/fares";
     public static final String STOPS_PATH = API_BASE_PATH + "/stops";
     public static final String HEALTH_PATH = "/health";
