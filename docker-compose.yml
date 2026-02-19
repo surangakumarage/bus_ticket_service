@@ -1,0 +1,43 @@
+version: '3.9'
+
+# Bus Ticketing System
+# Pure in-memory storage - No external database required
+# Data is stored in HashMaps and ArrayLists during runtime
+# Restart the service to reset all data to initial state
+
+services:
+  # Bus Ticketer Service - REST API with in-memory data storage
+  bus-ticketer:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: bus-ticketer-service
+    ports:
+      - "9091:9091"
+    environment:
+      APP_PROFILE: production
+      SERVER_PORT: 9091
+      JAVA_OPTS: "-Xms256m -Xmx512m -XX:+UseStringDeduplication"
+    volumes:
+      - ./logs:/var/log/bus-ticketer
+    networks:
+      - bus-ticketer-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9091/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 5s
+    restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          cpus: '1'
+          memory: 512M
+        reservations:
+          cpus: '0.5'
+          memory: 256M
+
+networks:
+  bus-ticketer-network:
+    driver: bridge
