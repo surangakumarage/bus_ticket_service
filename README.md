@@ -92,7 +92,7 @@ docker-compose -f docker-compose-tomcat.yml down
 
 
 Available Endpoints
-GET http://localhost:9090/bus-ticketer-service/health — Health check
-GET http://localhost:9090/bus-ticketer-service/info — Service information
-GET/POST http://localhost:9090/bus-ticketer-service/api/v1/reservation/availability — Check seat availability
-POST http://localhost:9090/bus-ticketer-service/api/v1/reservation/book — Book a ticket
+GET http://localhost:9090/bus-ticket-service/health — Health check
+GET http://localhost:9090/bus-ticket-service/info — Service information
+GET/POST http://localhost:9090/bus-ticket-service/api/v1/reservation/availability — Check seat availability
+POST http://localhost:9090/bus-ticket-service/api/v1/reservation/availability — Book a ticket
