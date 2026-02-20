@@ -148,36 +148,7 @@ public class DataStore {
      */
     private void initializeSeatsForJourney(int journeyId, int totalSeats, int busId, LocalDate journeyDate) {
 
-        /*
-        // Check if seats already exist for another journey on same bus on same day
-        Collection<Journey> siblingSJourneys = getJourneysByBusAndDate(busId, journeyDate);
 
-        // If this is not the first journey on this bus on this day, reuse existing seats
-        if (siblingSJourneys.size() > 1) {  // size > 1 because this journey was already added
-            // Find an existing journey on same bus to get its seats
-            for (Journey siblingJourney : siblingSJourneys) {
-                if (siblingJourney.getId() != journeyId) { // skip same journey
-                    // Get seats from sibling journey
-                    Collection<Seat> siblingSeats = seats.values().stream()
-                            .filter(s -> s.getJourneyId() == siblingJourney.getId())
-                            .toList();
-
-                    if (!siblingSeats.isEmpty()) {
-                        // Create seat references for this journey pointing to same physical seats
-                        // Do NOT copy booking status - seats are checked across all journeys on same bus
-                        for (Seat siblingsSeat : siblingSeats) {
-                            Seat sharedSeat = new Seat(journeyId, siblingsSeat.getSeatId(),
-                                    siblingsSeat.getRowNumber(), siblingsSeat.getColumn());
-                            sharedSeat.setId(seatIdCounter++);
-                            // Keep new seats unbooked - booking status is determined by actual bookings
-                            seats.put(sharedSeat.getId(), sharedSeat);
-                        }
-                        return;
-                    }
-                }
-            }
-        }
-        */
         // No sibling journeys found, create new seats
         for (int i = 1; i <= totalSeats; i++) {
             int row = (i - 1) / 4 + 1;  // 4 seats per row (A, B, C, D)
