@@ -1,10 +1,10 @@
 1. Check Availability (GET with query params)
 
-curl -X GET "http://localhost:9091/bus-ticketer-service/api/v1/reservation/availability?origin=A&destination=B&passenger_count=2&journey_date=2026-02-19"
+curl -X GET "http://localhost:9090/bus-ticketer-service/api/v1/reservation/availability?origin=A&destination=B&passenger_count=2&journey_date=2026-02-19"
 
 2. Check Availability (POST with JSON body)
 
-curl -X POST "http://localhost:9091/bus-ticketer-service/api/v1/reservation/availability" \
+curl -X POST "http://localhost:9090/bus-ticketer-service/api/v1/reservation/availability" \
 -H "Content-Type: application/json" \
 -d '{
 "origin": "A",
@@ -15,7 +15,7 @@ curl -X POST "http://localhost:9091/bus-ticketer-service/api/v1/reservation/avai
 
 3. Book Ticket (POST)
 
-curl -X POST "http://localhost:9091/bus-ticketer-service/api/v1/reservation/book" \
+curl -X POST "http://localhost:9090/bus-ticketer-service/api/v1/reservation/book" \
 -H "Content-Type: application/json" \
 -d '{
 "journey_id": 1,

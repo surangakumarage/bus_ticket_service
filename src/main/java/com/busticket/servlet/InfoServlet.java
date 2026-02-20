@@ -13,7 +13,7 @@ import java.time.LocalDateTime;
 /**
  * InfoServlet - Service information endpoint
  */
-@WebServlet(urlPatterns = {"bus-ticket-service/info"})
+@WebServlet(urlPatterns = {"/info"})
 public class InfoServlet extends HttpServlet {
 
     private LocalDateTime startTime;

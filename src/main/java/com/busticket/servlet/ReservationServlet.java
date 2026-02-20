@@ -34,7 +34,7 @@ import java.util.regex.Pattern;
  * Endpoints:
  * - POST /api/v1/reservation/book
  */
-@WebServlet(urlPatterns = {"bus-ticket-service/api/v1/reservation/book"})
+@WebServlet(urlPatterns = {"/api/v1/reservation/book"})
 public class ReservationServlet extends HttpServlet {
 
     private ReservationService reservationService;

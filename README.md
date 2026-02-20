@@ -21,7 +21,7 @@ mvn clean package -DskipTests
 docker-compose -f docker-compose.yml up -d
 
 # Verify server is running
-curl http://localhost:9091/bus-ticket-service/health
+curl http://localhost:9090/bus-ticket-service/health
 
 # View logs
 docker-compose -f docker-compose-tomcat.yml logs -f
@@ -107,10 +107,10 @@ export JAVA_TOOL_OPTIONS="-Dfile.encoding=UTF-8"
 ```
 Available Endpoints:
 
-GET http://localhost:9091/bus-ticketer-service/health - Health check
-GET http://localhost:9091/bus-ticketer-service/info - Service information
-GET/POST http://localhost:9091/bus-ticketer-service/api/v1/reservation/availability - Check seat availability
-POST http://localhost:9091/bus-ticketer-service/api/api/v1/reservation/book_ - Book a ticket
+GET http://localhost:9090/bus-ticketer-service/health - Health check
+GET http://localhost:9090/bus-ticketer-service/info - Service information
+GET/POST http://localhost:9090/bus-ticketer-service/api/v1/reservation/availability - Check seat availability
+POST http://localhost:9090/bus-ticketer-service/api/api/v1/reservation/book_ - Book a ticket
 
 
 

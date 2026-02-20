@@ -14,7 +14,7 @@ import java.time.temporal.ChronoUnit;
 /**
  * HealthServlet - Health check endpoint
  */
-@WebServlet(urlPatterns = {"bus-ticket-service/health"})
+@WebServlet(urlPatterns = {"/health"})
 public class HealthServlet extends HttpServlet {
 
     private LocalDateTime startTime;
