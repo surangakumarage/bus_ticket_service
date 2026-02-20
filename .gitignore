@@ -447,3 +447,5 @@ replay_pid*
 /_bmad/bmm/workflows/1-analysis/research/workflow-market-research.md
 /_bmad/bmm/workflows/1-analysis/research/workflow-technical-research.md
 /_bmad/bmm/workflows/2-plan-workflows/create-prd/workflow-validate-prd.md
+/target/bus-ticket-service/WEB-INF/web.xml
+/target/bus-ticket-service/META-INF/context.xml
